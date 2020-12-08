@@ -21,7 +21,7 @@
 	try {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection conn = DriverManager.getConnection
-		("jdbc:oracle:thin:@//localhost/xe", "system", "1234");
+		("jdbc:oracle:thin:@//localhost:1521/xe", "system", "1234");
 		
 		
 		Statement stmt = conn.createStatement();

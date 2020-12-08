@@ -1,12 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page import="java.sql.*" %>
+<%
+try {
+        Class.forName("oracle.jdbc.OracleDriver");
+        Connection conn = DriverManager.getConnection
+        ("jdbc:oracle:thin:@//localhost:1521/xe", "system", "1234");
 
-</body>
-</html>
+
+        Statement stmt = conn.createStatement();
+%>
+
+<h3>판매등록</h3>
+
+<form action="registration.jsp" method="post" name="action_form">
+<table border = "1">
+    <tr>
+        <td>판매한 상품</td>
+        <td>
+            <select name="product_id">
+            <%
+                String query = "SELECT PRODUCT_ID, NAME FROM PRODUCT ";
+                ResultSet rs = stmt.executeQuery(query);
+
+                while (rs.next()) {
+                    %><option value="<%=rs.getInt(1) %>"><%=rs.getString(2) %> <%
+                }
+            %>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>수량</td>
+        <td><input type="number" name="amount"></td>
+    </tr>
+    <tr>
+        <td>판매 날짜</td>
+        <td><input type="date" name="puchase_date"></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="등록하기">
+            <input type="button" value="다시쓰기" onclick ="reset_form()">
+    </tr>
+</table>
+</form>
+
+<script>
+function reset_form() {
+    document.action_form.reset();
+}
+</script>
+        <%
+        stmt.close();
+        conn.close();
+    }
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+%>

@@ -13,7 +13,7 @@ try {
 
 <h3>판매등록</h3>
 
-<form action="registration.jsp" method="post" name="action_form">
+<form action="sale_insert.jsp" method="post" name="action_form">
 <table border = "1">
     <tr>
         <td>판매한 상품</td>

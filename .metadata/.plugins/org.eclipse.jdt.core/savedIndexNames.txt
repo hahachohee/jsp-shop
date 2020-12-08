@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\win10se\Documents\GitHub\jsp-shop\.metadata\.plugins\org.eclipse.jdt.core
+1269627254.index
+2077227607.index
+178868810.index
+3267321060.index

@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\Users\win10se\Documents\GitHub\jsp-shop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2077910368.index
+\jsp-education\src
+C:\Users\win10se\Documents\GitHub\jsp-shop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4049547197.index
+\jsp-education\src
+C:\Users\win10se\Documents\GitHub\jsp-shop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1959687767.index
+\jsp-education\src
+C:\Users\win10se\Documents\GitHub\jsp-shop\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3168190935.index
+\jsp-education\src

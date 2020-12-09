@@ -16,8 +16,8 @@ String section = request.getParameter("section") != null ? request.getParameter(
 	
 	<%
 		switch(section) {
-		case "registration_of_sale":
-			%><%@include file = "page/registration_of_sale.jsp" %><%
+		case "registration":
+			%><%@include file = "page/registration.jsp" %><%
 			break;
 		case "sales_by_product":
 			%><%@include file = "page/sales_by_product.jsp"%><%

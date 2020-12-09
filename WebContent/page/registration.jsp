@@ -19,6 +19,7 @@ try {
         <td>판매한 상품</td>
         <td>
             <select name="product_id">
+            	<option value="0">값을 선택해주세요</option>
             <%
                 String query = "SELECT PRODUCT_ID, NAME FROM PRODUCT ";
                 ResultSet rs = stmt.executeQuery(query);
@@ -36,17 +37,39 @@ try {
     </tr>
     <tr>
         <td>판매 날짜</td>
-        <td><input type="date" name="puchase_date"></td>
+        <td><input type="date" name="purchase_date"></td>
     </tr>
     <tr>
         <td colspan="2">
-            <input type="submit" value="등록하기">
+            <input type="button" value="등록하기" onclick="submit_form()">
             <input type="button" value="다시쓰기" onclick ="reset_form()">
     </tr>
 </table>
 </form>
 
 <script>
+function submit_form(){
+	if(document.action_form.amount.value === ""){
+		document.action_form.amount.focus();
+		alert("수량을입력해주세요");
+		return;
+	}
+	if(document.action_form.purchase_date.value === ""){
+		alert("날짜를 입력해 주세요");
+		document.action_form.purchase_date.focus();
+		return;
+		
+	}
+	if(document.action_form.product_id.selectIndex <= 0){
+		document.action_form.product_id.focus();
+		alert("판매 상품을 선택하여 주세요");
+		return;
+	}
+	
+	alert("등록을 하겠습니다!");
+	document.action_form.submit();
+}
+
 function reset_form() {
     document.action_form.reset();
 }
